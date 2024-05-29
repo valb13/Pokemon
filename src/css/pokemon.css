@@ -1,0 +1,89 @@
+.pokemon{
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: end;
+    align-items: start;
+}
+
+.pokemon-opposent{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: start;
+}
+
+.pokemon-img #pokemon{
+    scale: 2.7;
+    position: relative;
+    z-index: 2;
+    top : 40px;
+}
+
+.pokemon-img-opposent #pokemon{
+    scale: 2.5;
+    position: relative;
+    z-index: 2;
+}
+
+.pokemon-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 122px;
+}
+
+.pokemon-img-opposent{
+    margin-top: 40px;
+    scale: 0.8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 130px;
+}
+
+.pokemon-plateforme{
+    position: relative;
+    top: -50px ;
+}
+
+.pokemon-plateforme-opposent{
+    position: relative;
+    top: -115px ;
+}
+
+@keyframes attack {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+    50% {
+        transform: translate(var(--translate-x), var(--translate-y)) scale(var(--scale));
+    }
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+@keyframes take-dmg {
+    0%{
+        opacity: 1;
+    }
+    20%{
+        opacity: 0;
+    }
+    40%{
+        opacity: 1;
+    }
+    60%{
+        opacity: 0;
+    }
+    80%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}

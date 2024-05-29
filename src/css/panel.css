@@ -1,0 +1,42 @@
+@import url('https://fonts.cdnfonts.com/css/public-pixel');
+
+.panel-cont {
+    width: 100vw;
+    height: calc(100vh - 200px);
+    display: grid;
+    place-items: center;
+    position: absolute;
+    z-index: 6;
+    top: 0;
+    left: 0;
+}
+
+.panel {
+    font-family: 'Public Pixel';
+    font-size: 12px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: #cccccc 6px solid;
+    background-color: #f2f2f2;
+    width: 650px;
+    padding: 10px 10px 15px 10px;
+    text-align: center;
+    border-image-source: url("data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 width=%276%27 height=%276%27><path d=%27M0 2h2v2H0zM2 0h2v2H2zM4 2h2v2H4zM2 4h2v2H2z%27 fill=%27%23cccccc%27 /></svg>");
+    border-image-width: 6px;
+    border-image-slice: 2;
+    border-radius: 20px;
+    line-height : 20px;
+}
+
+.panel-header-cross {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 5px;
+    font-size: 18px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}

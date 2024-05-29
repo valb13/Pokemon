@@ -1,0 +1,31 @@
+.restart-cont{
+    display: grid;
+    place-items: center;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 7;
+}
+
+.restart-btn{
+    opacity: 0;
+    display: none;
+    color: #fff;
+    border-style: solid;
+    border-width: 6px;
+    border-color: #5b8423;
+    border-image-slice: 2;
+    border-image-width: 1;
+    border-image-outset: 0;
+    border-image-source: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='6' height='6'><path d='M0 2h2v2H0zM2 0h2v2H2zM4 2h2v2H4zM2 4h2v2H2z' fill='%235b8423' /></svg>");
+    border-radius: 21px;
+    background-color: #85c034;
+    font-family: 'Public Pixel';
+    font-size: 12px;
+    padding: 12px 80px 12px 80px;
+    width: fit-content;
+}
+
+.screen-end-btn-restart:hover{
+    background-color: #5b8423;
+}
