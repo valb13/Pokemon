@@ -26,7 +26,7 @@ export default function Arena() {
         {
             "name": "Vive Attaque",
             "type": "Normal",
-            "power": 60,
+            "power": 30,
             "accuracy": 100,
             "pp": 30,
             "priority": 1,
@@ -38,7 +38,7 @@ export default function Arena() {
         {
             "name": "Queue de fer",
             "type": "Normal",
-            "power": 40,
+            "power": 20,
             "accuracy": 100,
             "pp": 30,
             "priority": 0,
@@ -50,7 +50,7 @@ export default function Arena() {
         {
             "name": "Mimi-queue",
             "type": "Normal",
-            "power": 30,
+            "power": 25,
             "accuracy": 100,
             "pp": 25,
             "priority": 0,
@@ -60,6 +60,57 @@ export default function Arena() {
             "description" : "Remue la queue pour baisser la DEFENSE de l'ennemi."
         }]
     );
+
+    const [atkOpps, setAtkOpps] = useState([
+        {
+            "name": "Rugissement",
+            "type": "Normal",
+            "power": 10,
+            "accuracy": 80,
+            "pp": 10,
+            "priority": 0,
+            "target": "player",
+            "effect": "",
+            "effectChance": 10,
+            "description" : "Le lanceur pousse un cri tout mimi pour tromper la vigilance de la cible et baisser son Attaque."
+        },
+        {
+            "name": "Spore",
+            "type": "Plante",
+            "power": 20,
+            "accuracy": 50,
+            "pp": 10,
+            "priority": 0,
+            "target": "player",
+            "effect": "",
+            "effectChance": 10,
+            "description" : "Le lanceur répand un nuage de spores qui endort."
+        },
+        {
+            "name": "Tempête Florale",
+            "type": "Plante",
+            "power": 40,
+            "accuracy": 50,
+            "pp": 10,
+            "priority": 0,
+            "target": "player",
+            "effect": "",
+            "effectChance": 10,
+            "description" : "Déclenche une violente tempête de fleurs qui inflige des dégâts à tous les Pokémon alentour."
+        },
+        {
+            "name": "Lutte",
+            "type": "Normal",
+            "power": 30,
+            "accuracy": 50,
+            "pp": 10,
+            "priority": 0,
+            "target": "player",
+            "effect": "",
+            "effectChance": 10,
+            "description" : "Une attaque désespérée, utilisée quand le lanceur n’a plus de PP. Le blesse aussi légèrement."
+        },
+    ]);
 
     const [showPanel, setShowPanel] = useState(false);
     const [paneltext, setPanelText] = useState("");
@@ -237,25 +288,12 @@ export default function Arena() {
     }, [whoAtk, setWhoAtk]);
 
     function IA() {
-        // Choose diffuculty
-        // Choose atk random atm
-        chooseAtk({
-            "name": "Test IA",
-            "type": "Normal",
-            "power": 20,
-            "accuracy": 60,
-            "pp": 30,
-            "priority": 0,
-            "target": "opposent",
-            "effect": "None",
-            "effectChance": 0,
-            "description" : "Attaque avec sa queue. Peut baisser la DEFENSE."
-        })
+        //TODO Choose diffuculty
+        chooseAtk(atkOpps[Math.floor(Math.random() * 4)]);
     }
 
     function EndGame() {
-        //Todo : ajouter écran de fin du combat
-        //Todo : ajouter bouton pour recommencer
+
         var screen = document.getElementsByClassName("screen-end-to-deploy")[0];
 
         wait(1000).then(r => {
@@ -271,7 +309,7 @@ export default function Arena() {
         <div className={"arena-cont-body"}>
             <div className={"arena-cont-main"}>
                 <div className={"arena-cont-pokemon"}>
-                    <Pokemon name={"Bulbizzare"} type={"Plante"} level={8} hp={hpOpps} atk={10} def={5} speed={10}
+                    <Pokemon name={"Bulbizzare"} type={"Plante"} level={18} hp={hpOpps} atk={10} def={5} speed={10}
                              opposent={true} img={imgSecond}/>
                     <Pokemon name={"Pikachu"} type={"Electric"} level={15} hp={hpPlayer} atk={10} def={5} speed={10}
                              opposent={false} img={img}/>
